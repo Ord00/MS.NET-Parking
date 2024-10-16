@@ -1,4 +1,5 @@
-﻿/Parking/Parking.Service/obj/
-/Parking/Parking.Service/bin/
-/.idea/
-/.vs/
+﻿**/bin
+**/logs
+**/obj
+**/.vs
+**/.idea
