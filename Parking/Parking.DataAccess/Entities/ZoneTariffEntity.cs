@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Parking.DataAccess.Entities;
 
-[Table("ZoneTariff")]
+[Table("ZoneTariffs")]
 public class ZoneTariffEntity : BaseEntity
 {
     public string ZoneName { get; set; }

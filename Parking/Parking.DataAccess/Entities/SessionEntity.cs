@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Parking.DataAccess.Entities;
 
-[Table("Session")]
+[Table("Sessions")]
 public class SessionEntity : BaseEntity
 {
     public DateTime EntryDate { get; set; }

@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Parking.DataAccess.Entities;
 
-[Table("CreditCard")]
+[Table("CreditCards")]
 public class CreditCardEntity : BaseEntity
 {
     public string CardNumber { get; set; }

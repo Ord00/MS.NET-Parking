@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Parking.DataAccess.Entities;
 
-[Table("VehicleType")]
+[Table("VehicleTypes")]
 public class VehicleTypeEntity : BaseEntity
 {
     public string VehicleTypeName { get; set; }
