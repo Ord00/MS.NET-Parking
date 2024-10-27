@@ -9,4 +9,6 @@ public class RegistrationPlateEntity : BaseEntity
     public string Letters { get; set; }
     public int RegionCode { get; set; }
     public string Country { get; set; }
+    
+    public VehicleEntity Vehicle{ get; set; }
 }

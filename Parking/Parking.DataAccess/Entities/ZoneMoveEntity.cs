@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Parking.DataAccess.Entities;
 
 [Table("ZoneMove")]
-public class ZoneMoveEntity
+public class ZoneMoveEntity : BaseEntity
 {
     public DateTime EntryDate { get; set; }
     public DateTime? ExitDate { get; set; }
