@@ -10,5 +10,13 @@
     <ItemGroup>
         <ProjectReference Include="..\Parking.DataAccess\Parking.DataAccess.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Mapper\" />
+      <Folder Include="Users\Entities\" />
+      <Folder Include="Users\Exceptions\" />
+      <Folder Include="Users\Manager\" />
+      <Folder Include="Users\Provider\" />
+    </ItemGroup>
     
 </Project>
