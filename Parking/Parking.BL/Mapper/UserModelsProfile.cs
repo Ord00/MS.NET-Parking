@@ -1,6 +1,5 @@
 using AutoMapper;
 using Parking.BL.Users.Entities;
-using Parking.Controllers.UserController;
 
 namespace Parking.BL.Mapper;
 
@@ -8,8 +7,6 @@ public class UserModelsProfile : Profile
 {
     public UserModelsProfile()
     {
-        CreateMap<CreateUserRequest, CreateUserModel>().ReverseMap();
-        
         CreateMap<UserModel, UserResponse>().ReverseMap()
             .ForMember(x => x.Id, y => y.MapFrom(z => z.Id))
             .ForMember(x => x.FirstName, y => y.MapFrom(z => z.FirstName))

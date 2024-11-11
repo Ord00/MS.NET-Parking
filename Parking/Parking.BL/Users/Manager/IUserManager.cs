@@ -1,7 +1,5 @@
 using Parking.BL.Users.Entities;
 using Parking.BL.Users.Entities.Responses;
-using Parking.Controllers;
-using Parking.Controllers.UserController;
 
 namespace Parking.BL.Users.Manager;
 
