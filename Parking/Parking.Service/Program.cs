@@ -1,3 +1,4 @@
+using Parking.DI;
 using Parking.IoC;
 using Parking.Settings;
 
@@ -14,12 +15,14 @@ builder.Services.AddControllers();
 DbContextConfigurator.ConfigureService(builder.Services, settings);
 SerilogConfigurator.ConfigureService(builder);
 SwaggerConfigurator.ConfigureServices(builder.Services);
+ApplicationConfigurator.ConfigureServices(builder, settings);
 
 var app = builder.Build();
 
 SerilogConfigurator.ConfigureApplication(app);
 SwaggerConfigurator.ConfigureApplication(app);
 DbContextConfigurator.ConfigureApplication(app);
+ApplicationConfigurator.ConfigureApplication(app);
 
 app.UseHttpsRedirection();
 app.UseAuthorization();

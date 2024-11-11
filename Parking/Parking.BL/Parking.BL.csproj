@@ -12,7 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Users\Exceptions\" />
       <Folder Include="Vehicles\Exceptions\" />
       <Folder Include="VehicleTypes\Exceptions\" />
       <Folder Include="VehicleTypes\Manager\" />

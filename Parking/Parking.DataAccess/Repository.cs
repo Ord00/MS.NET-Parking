@@ -6,7 +6,7 @@ namespace Parking.DataAccess;
 
 public class Repository<T> : IRepository<T> where T : BaseEntity
 {
-    public Repository(IDbContextFactory<DbContext> contextFactory)
+    public Repository(IDbContextFactory<ParkingDbContext> contextFactory)
     {
         _contextFactory = contextFactory;
     }
@@ -65,5 +65,5 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
         context.SaveChanges();
     }
 
-    private readonly IDbContextFactory<DbContext> _contextFactory;
+    private readonly IDbContextFactory<ParkingDbContext> _contextFactory;
 }
