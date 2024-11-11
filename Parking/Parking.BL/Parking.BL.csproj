@@ -9,14 +9,24 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Parking.DataAccess\Parking.DataAccess.csproj" />
+        <ProjectReference Include="..\Parking.Service\Parking.Service.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Mapper\" />
-      <Folder Include="Users\Entities\" />
       <Folder Include="Users\Exceptions\" />
-      <Folder Include="Users\Manager\" />
-      <Folder Include="Users\Provider\" />
+      <Folder Include="Vehicles\Exceptions\" />
+      <Folder Include="VehicleTypes\Exceptions\" />
+      <Folder Include="VehicleTypes\Manager\" />
+      <Folder Include="VehicleTypes\Provider\" />
+      <Folder Include="ZoneMoves\Entities\" />
+      <Folder Include="ZoneMoves\Exceptions\" />
+      <Folder Include="ZoneMoves\Manager\" />
+      <Folder Include="ZoneMoves\Provider\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="13.0.1" />
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     </ItemGroup>
     
 </Project>

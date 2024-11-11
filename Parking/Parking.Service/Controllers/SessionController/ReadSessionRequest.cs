@@ -1,6 +1,6 @@
 namespace Parking.Controllers.SessionController;
 
-public class CreateSessionRequest
+public class ReadSessionRequest
 {
     public DateTime EntryDate { get; set; }
     public DateTime? ExitDate { get; set; }

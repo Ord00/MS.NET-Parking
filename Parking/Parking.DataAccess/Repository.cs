@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Parking.DataAccess.Entities;
 
@@ -9,13 +10,19 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
     {
         _contextFactory = contextFactory;
     }
-
+    
     public IQueryable<T> GetAll()
     {
         using var context = _contextFactory.CreateDbContext();
         return context.Set<T>();
     }
 
+    public IQueryable<T> GetAll(Expression<Func<T, bool>> predicate)
+    {
+        using var dbContext = _contextFactory.CreateDbContext();
+        return dbContext.Set<T>().Where(predicate);
+    }
+    
     public T? GetById(int id)
     {
         using var context = _contextFactory.CreateDbContext();

@@ -1,7 +1,8 @@
 namespace Parking.Controllers.UserController;
 
-public class CreateUserRequest
+public class ReadUserRequest
 {
+    public int Id { get; set; }
     public string LastName { get; set; }
     public string FirstName { get; set; }
     public DateTime Birthday { get; set; }

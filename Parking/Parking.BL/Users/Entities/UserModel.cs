@@ -1,7 +1,8 @@
-namespace Parking.Controllers.UserController;
+namespace Parking.BL.Users.Entities;
 
-public class CreateUserRequest
+public class UserModel
 {
+    public int Id { get; set; }
     public string LastName { get; set; }
     public string FirstName { get; set; }
     public DateTime Birthday { get; set; }

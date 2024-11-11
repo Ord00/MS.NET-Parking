@@ -1,6 +1,6 @@
 namespace Parking.Controllers.RegistrationPlateController;
 
-public class CreateRegistrationPlateRequest
+public class UpdateRegistrationPlateRequest
 {
     public int RegistrationNumber { get; set; }
     public string Letters { get; set; }
