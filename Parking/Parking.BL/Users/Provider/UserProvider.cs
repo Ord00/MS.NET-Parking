@@ -1,6 +1,6 @@
 using AutoMapper;
 using Parking.BL.Users.Entities;
-using Parking.BL.Users.Entities.Responses;
+using Parking.BL.Users.Entities.ActionModels;
 using Parking.DataAccess;
 using Parking.DataAccess.Entities;
 

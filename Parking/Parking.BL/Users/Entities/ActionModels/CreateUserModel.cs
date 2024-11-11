@@ -1,4 +1,4 @@
-namespace Parking.BL.Users.Entities;
+namespace Parking.BL.Users.Entities.ActionModels;
 
 public class CreateUserModel
 {

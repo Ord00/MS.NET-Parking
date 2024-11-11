@@ -8,6 +8,5 @@ public class UserResponse
     public DateTime Birthday { get; set; }
     public string? Patronymic { get; set; }
     public string Login { get; set; }
-
     public string UserRole { get; set; }
 }
