@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Parking.DataAccess.Entities;
 
@@ -5,17 +6,23 @@ namespace Parking.DataAccess;
 
 public class Repository<T> : IRepository<T> where T : BaseEntity
 {
-    public Repository(IDbContextFactory<DbContext> contextFactory)
+    public Repository(IDbContextFactory<ParkingDbContext> contextFactory)
     {
         _contextFactory = contextFactory;
     }
-
+    
     public IQueryable<T> GetAll()
     {
         using var context = _contextFactory.CreateDbContext();
         return context.Set<T>();
     }
 
+    public IQueryable<T> GetAll(Expression<Func<T, bool>> predicate)
+    {
+        using var dbContext = _contextFactory.CreateDbContext();
+        return dbContext.Set<T>().Where(predicate);
+    }
+    
     public T? GetById(int id)
     {
         using var context = _contextFactory.CreateDbContext();
@@ -58,5 +65,5 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
         context.SaveChanges();
     }
 
-    private readonly IDbContextFactory<DbContext> _contextFactory;
+    private readonly IDbContextFactory<ParkingDbContext> _contextFactory;
 }

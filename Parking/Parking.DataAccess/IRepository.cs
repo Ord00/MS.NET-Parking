@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Parking.DataAccess.Entities;
 
 namespace Parking.DataAccess;
@@ -5,6 +6,7 @@ namespace Parking.DataAccess;
 public interface IRepository<T> where T: BaseEntity
 {
     IQueryable<T> GetAll();
+    IQueryable<T> GetAll(Expression<Func<T, bool>> predicate);
     T? GetById(int id);
     T? GetById(Guid id);
     T Save(T entity);
