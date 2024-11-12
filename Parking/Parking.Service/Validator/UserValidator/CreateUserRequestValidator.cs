@@ -1,7 +1,7 @@
 using FluentValidation;
 using Parking.Controllers.UserController;
 
-namespace Parking.Validator;
+namespace Parking.Validator.UserValidator;
 
 public class CreateUserRequestValidator : AbstractValidator<CreateUserRequest>
 {

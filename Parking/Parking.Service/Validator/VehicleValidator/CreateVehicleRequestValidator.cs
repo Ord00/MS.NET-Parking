@@ -1,7 +1,7 @@
 using FluentValidation;
 using Parking.Controllers.VehicleController;
 
-namespace Parking.Validator;
+namespace Parking.Validator.VehicleValidator;
 
 public class CreateVehicleRequestValidator : AbstractValidator<CreateVehicleRequest>
 {

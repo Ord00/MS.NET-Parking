@@ -8,14 +8,14 @@ namespace Parking.BL.Vehicles.Manager;
 
 public class VehicleManager(IRepository<VehicleEntity> vehiclesRepository, IMapper mapper) : IVehicleManager
 {
-    public VehicleModel CreateUser(CreateVehicleModel model)
+    public VehicleModel CreateVehicle(CreateVehicleModel model)
     {
         var entity = mapper.Map<VehicleEntity>(model);
         entity = vehiclesRepository.Save(entity);
         return mapper.Map<VehicleModel>(entity);
     }
 
-    public void DeleteUser(int id)
+    public void DeleteVehicle(int id)
     {
         var entity = vehiclesRepository.GetById(id);
 
@@ -28,7 +28,7 @@ public class VehicleManager(IRepository<VehicleEntity> vehiclesRepository, IMapp
 
     }
 
-    public VehicleModel UpdateUser(int id, UpdateVehicleModel model)
+    public VehicleModel UpdateVehicle(int id, UpdateVehicleModel model)
     {
         var entity = vehiclesRepository.GetById(id);
             

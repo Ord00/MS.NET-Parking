@@ -5,9 +5,9 @@ namespace Parking.BL.Vehicles.Manager;
 
 public interface IVehicleManager
 {
-    VehicleModel CreateUser(CreateVehicleModel model);
+    VehicleModel CreateVehicle(CreateVehicleModel model);
     
-    VehicleModel UpdateUser(int id, UpdateVehicleModel model);
+    VehicleModel UpdateVehicle(int id, UpdateVehicleModel model);
     
-    void DeleteUser(int id);
+    void DeleteVehicle(int id);
 }
