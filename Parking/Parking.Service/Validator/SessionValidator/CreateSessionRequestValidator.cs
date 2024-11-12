@@ -13,7 +13,6 @@ public class CreateSessionRequestValidator : AbstractValidator<CreateSessionRequ
             .WithMessage("Entry date is required");
         
         RuleFor(x => x.ExitDate)
-            .NotEmpty()
             .Must(y => y > DateTime.UtcNow)
             .WithMessage("Exit date is required");
         
