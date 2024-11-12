@@ -12,17 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Vehicles\Exceptions\" />
-      <Folder Include="VehicleTypes\Exceptions\" />
-      <Folder Include="VehicleTypes\Manager\" />
-      <Folder Include="VehicleTypes\Provider\" />
-      <Folder Include="ZoneMoves\Entities\" />
-      <Folder Include="ZoneMoves\Exceptions\" />
-      <Folder Include="ZoneMoves\Manager\" />
-      <Folder Include="ZoneMoves\Provider\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="AutoMapper" Version="13.0.1" />
     </ItemGroup>
     

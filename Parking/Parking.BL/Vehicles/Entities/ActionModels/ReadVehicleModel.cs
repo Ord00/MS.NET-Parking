@@ -1,6 +1,6 @@
-namespace Parking.Controllers.VehicleController;
+namespace Parking.BL.Vehicles.Entities.ActionModels;
 
-public class UpdateVehicleRequest
+public class ReadVehicleModel
 {
     public string? Model { get; set; }
     public string? Brand { get; set; }

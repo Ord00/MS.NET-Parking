@@ -1,13 +1,9 @@
-namespace Parking.BL.Vehicles.Entities;
+namespace Parking.BL.Vehicles.Entities.ActionModels;
 
-public class VehicleModel
+public class CreateVehicleModel
 {
-    public int Id { get; set; }
-    
     public string Model { get; set; }
-    
     public string Brand { get; set; }
-    
     public string Colour { get; set; }
     
     public int VehicleTypeId { get; set; }
