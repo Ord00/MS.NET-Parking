@@ -1,4 +1,4 @@
-namespace Parking.BL.Users.Entities;
+namespace Parking.BL.Users.Entities.Responses;
 
 public class UserResponse
 {

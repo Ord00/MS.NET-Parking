@@ -1,5 +1,6 @@
 using AutoMapper;
 using Parking.BL.Users.Entities;
+using Parking.BL.Users.Entities.Responses;
 
 namespace Parking.BL.Mapper;
 

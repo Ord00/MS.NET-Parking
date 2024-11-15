@@ -1,4 +1,4 @@
-namespace Parking.BL.Sessions.Entities;
+namespace Parking.BL.Sessions.Entities.Responses;
 
 public class SessionResponse
 {

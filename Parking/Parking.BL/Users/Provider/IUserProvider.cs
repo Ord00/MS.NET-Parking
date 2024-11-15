@@ -5,7 +5,7 @@ namespace Parking.BL.Users.Provider;
 
 public interface IUserProvider
 {
-    IEnumerable<UserModel> GetUsers(ReadUserModel filter);
+    IEnumerable<UserModel> GetUsers(ReadUserModel? filter = null);
     
     UserModel GetUserInfo(int id);
 }
