@@ -11,6 +11,12 @@ public static class MapperConfigurator
         {
             config.AddProfile<UserModelsProfile>();
             config.AddProfile<UserServicesProfile>();
+            
+            config.AddProfile<VehicleModelsProfile>();
+            config.AddProfile<VehicleServicesProfile>();
+            
+            config.AddProfile<SessionModelsProfile>();
+            config.AddProfile<SessionServicesProfile>();
         });
     }
 }

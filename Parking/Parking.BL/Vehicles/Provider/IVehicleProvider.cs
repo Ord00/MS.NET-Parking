@@ -5,7 +5,7 @@ namespace Parking.BL.Vehicles.Provider;
 
 public interface IVehicleProvider
 {
-    IEnumerable<VehicleModel> GetVehicles(ReadVehicleModel filter);
+    IEnumerable<VehicleModel> GetVehicles(ReadVehicleModel? filter = null);
     
     VehicleModel GetVehicleInfo(int id);
 }
