@@ -10,6 +10,6 @@ public class UserServicesProfile : Profile
     public UserServicesProfile()
     {
         CreateMap<ReadUserRequest, ReadUserModel>().ReverseMap();
-        CreateMap<CreateUserRequest, CreateUserModel>().ReverseMap();
+        CreateMap<CreateUserRequest, RegisterUserModel>().ReverseMap();
     }
 }

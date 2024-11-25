@@ -8,7 +8,7 @@ namespace Parking.BL.Users.Manager;
 
 public class UserManager(IRepository<User> usersRepository, IMapper mapper) : IUserManager
 {
-    public UserModel CreateUser(CreateUserModel model)
+    public UserModel CreateUser(RegisterUserModel model)
         {
             var entity = mapper.Map<User>(model);
             entity = usersRepository.Save(entity);

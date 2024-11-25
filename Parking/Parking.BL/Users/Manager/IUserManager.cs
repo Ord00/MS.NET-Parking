@@ -5,7 +5,7 @@ namespace Parking.BL.Users.Manager;
 
 public interface IUserManager
 {
-    UserModel CreateUser(CreateUserModel model);
+    UserModel CreateUser(RegisterUserModel model);
     
     UserModel UpdateUser(int id, UpdateUserModel model);
     
