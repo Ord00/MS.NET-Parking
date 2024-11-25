@@ -16,6 +16,7 @@ DbContextConfigurator.ConfigureService(builder.Services, settings);
 SerilogConfigurator.ConfigureService(builder);
 SwaggerConfigurator.ConfigureServices(builder.Services);
 ApplicationConfigurator.ConfigureServices(builder, settings);
+AuthorizationConfigurator.ConfigureServices(builder.Services, configuration);
 
 var app = builder.Build();
 
@@ -25,7 +26,7 @@ DbContextConfigurator.ConfigureApplication(app);
 ApplicationConfigurator.ConfigureApplication(app);
 
 app.UseHttpsRedirection();
-app.UseAuthorization();
+AuthorizationConfigurator.ConfigureApplication(app);
 app.MapControllers();
 
 app.Run();

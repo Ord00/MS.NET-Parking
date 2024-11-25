@@ -4,8 +4,9 @@ using Microsoft.AspNetCore.Identity;
 namespace Parking.DataAccess.Entities;
 
 [Table("Users")]
-public class User : IdentityUser<int>, IBaseEntity
+public class User : IdentityUser<Guid>, IBaseEntity
 {
+    public int Id { get; set; }
     public Guid ExternalId { get; set; }
     public DateTime ModificationTime { get; set; }
     public DateTime CreationTime { get; set; }
@@ -21,6 +22,6 @@ public class User : IdentityUser<int>, IBaseEntity
     public virtual ICollection<Session> Sessions { get; set; }
 }
 
-public class UserRole : IdentityRole<int>
+public class UserRole : IdentityRole<Guid>
 {
 }

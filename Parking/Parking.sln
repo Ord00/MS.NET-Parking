@@ -6,8 +6,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parking.DataAccess", "Parki
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parking.BL", "Parking.BL\Parking.BL.csproj", "{C5858DAB-C0AB-4CE2-8FF2-CF6750627F3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{D5FCCECB-4ACF-4F07-B0C6-4937F14BF0F1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +24,5 @@ Global
 		{C5858DAB-C0AB-4CE2-8FF2-CF6750627F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5858DAB-C0AB-4CE2-8FF2-CF6750627F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5858DAB-C0AB-4CE2-8FF2-CF6750627F3E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D5FCCECB-4ACF-4F07-B0C6-4937F14BF0F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5FCCECB-4ACF-4F07-B0C6-4937F14BF0F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5FCCECB-4ACF-4F07-B0C6-4937F14BF0F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D5FCCECB-4ACF-4F07-B0C6-4937F14BF0F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,13 +1,13 @@
 using Duende.IdentityServer.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Parking.DataAccess;
 using Parking.DataAccess.Entities;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
 
-namespace IdentityServer.IoC;
+namespace Parking.IoC;
 
-public class AuthorisationConfigurator
+public class AuthorizationConfigurator
 {
     public static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
     {

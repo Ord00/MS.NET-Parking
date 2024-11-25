@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Parking.DataAccess.Entities;
 
 namespace Parking.DataAccess;
 
-public class ParkingDbContext : DbContext
+public class ParkingDbContext : IdentityDbContext<User, UserRole, Guid>
 {
     public DbSet<CreditCard> CreditCards { get; set; }
     public DbSet<RegistrationPlate> RegistrationPlates { get; set; }
@@ -14,12 +16,25 @@ public class ParkingDbContext : DbContext
     public DbSet<ZoneMove> ZoneMoves { get; set; }
     public DbSet<ZoneTariff> ZoneTariffs { get; set; }
     
-    public ParkingDbContext(DbContextOptions options) : base(options)
+    public ParkingDbContext(DbContextOptions<ParkingDbContext> options) : base(options)
     {
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+
+        #region Users
+
+        modelBuilder.Entity<IdentityUserClaim<int>>().ToTable("user_claims");
+        modelBuilder.Entity<IdentityUserLogin<int>>().ToTable("user_logins");
+        modelBuilder.Entity<IdentityUserToken<int>>().ToTable("user_tokens");
+        modelBuilder.Entity<IdentityRole<int>>().ToTable("user_roles");
+        modelBuilder.Entity<IdentityRoleClaim<int>>().ToTable("user_roles_claims");
+        modelBuilder.Entity<IdentityUserRole<int>>().ToTable("user_role_owners");
+
+        #endregion
+        
         modelBuilder.Entity<User>().HasKey(x => x.Id);
         modelBuilder.Entity<User>().HasIndex(x => x.ExternalId).IsUnique();
         modelBuilder.Entity<User>().HasMany(x => x.CreditCards)
