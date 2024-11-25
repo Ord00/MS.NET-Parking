@@ -6,11 +6,11 @@ using Parking.DataAccess.Entities;
 
 namespace Parking.BL.Users.Manager;
 
-public class UserManager(IRepository<UserEntity> usersRepository, IMapper mapper) : IUserManager
+public class UserManager(IRepository<User> usersRepository, IMapper mapper) : IUserManager
 {
     public UserModel CreateUser(CreateUserModel model)
         {
-            var entity = mapper.Map<UserEntity>(model);
+            var entity = mapper.Map<User>(model);
             entity = usersRepository.Save(entity);
             return mapper.Map<UserModel>(entity);
         }

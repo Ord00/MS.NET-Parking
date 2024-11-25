@@ -37,7 +37,7 @@ namespace Parking.DataAccess.Migrations
                     b.ToTable("UserCreditCard", (string)null);
                 });
 
-            modelBuilder.Entity("Parking.DataAccess.Entities.CreditCardEntity", b =>
+            modelBuilder.Entity("Parking.DataAccess.Entities.CreditCard", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -70,7 +70,7 @@ namespace Parking.DataAccess.Migrations
                     b.ToTable("CreditCards");
                 });
 
-            modelBuilder.Entity("Parking.DataAccess.Entities.RegistrationPlateEntity", b =>
+            modelBuilder.Entity("Parking.DataAccess.Entities.RegistrationPlate", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -109,7 +109,7 @@ namespace Parking.DataAccess.Migrations
                     b.ToTable("RegistrationPlates");
                 });
 
-            modelBuilder.Entity("Parking.DataAccess.Entities.SessionEntity", b =>
+            modelBuilder.Entity("Parking.DataAccess.Entities.Session", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -150,7 +150,7 @@ namespace Parking.DataAccess.Migrations
                     b.ToTable("Sessions");
                 });
 
-            modelBuilder.Entity("Parking.DataAccess.Entities.UserEntity", b =>
+            modelBuilder.Entity("Parking.DataAccess.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -249,7 +249,7 @@ namespace Parking.DataAccess.Migrations
                     b.ToTable("Vehicles");
                 });
 
-            modelBuilder.Entity("Parking.DataAccess.Entities.VehicleTypeEntity", b =>
+            modelBuilder.Entity("Parking.DataAccess.Entities.VehicleType", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -278,7 +278,7 @@ namespace Parking.DataAccess.Migrations
                     b.ToTable("VehicleTypes");
                 });
 
-            modelBuilder.Entity("Parking.DataAccess.Entities.ZoneMoveEntity", b =>
+            modelBuilder.Entity("Parking.DataAccess.Entities.ZoneMove", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -319,7 +319,7 @@ namespace Parking.DataAccess.Migrations
                     b.ToTable("ZoneMoves");
                 });
 
-            modelBuilder.Entity("Parking.DataAccess.Entities.ZoneTariffEntity", b =>
+            modelBuilder.Entity("Parking.DataAccess.Entities.ZoneTariff", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -358,22 +358,22 @@ namespace Parking.DataAccess.Migrations
 
             modelBuilder.Entity("CreditCardEntityUserEntity", b =>
                 {
-                    b.HasOne("Parking.DataAccess.Entities.CreditCardEntity", null)
+                    b.HasOne("Parking.DataAccess.Entities.CreditCard", null)
                         .WithMany()
                         .HasForeignKey("CreditCardsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Parking.DataAccess.Entities.UserEntity", null)
+                    b.HasOne("Parking.DataAccess.Entities.User", null)
                         .WithMany()
                         .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Parking.DataAccess.Entities.SessionEntity", b =>
+            modelBuilder.Entity("Parking.DataAccess.Entities.Session", b =>
                 {
-                    b.HasOne("Parking.DataAccess.Entities.UserEntity", "User")
+                    b.HasOne("Parking.DataAccess.Entities.User", "User")
                         .WithMany("Sessions")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -392,13 +392,13 @@ namespace Parking.DataAccess.Migrations
 
             modelBuilder.Entity("Parking.DataAccess.Entities.VehicleEntity", b =>
                 {
-                    b.HasOne("Parking.DataAccess.Entities.RegistrationPlateEntity", "RegistrationPlate")
+                    b.HasOne("Parking.DataAccess.Entities.RegistrationPlate", "RegistrationPlate")
                         .WithOne("Vehicle")
                         .HasForeignKey("Parking.DataAccess.Entities.VehicleEntity", "RegistrationPlateId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Parking.DataAccess.Entities.VehicleTypeEntity", "VehicleType")
+                    b.HasOne("Parking.DataAccess.Entities.VehicleType", "VehicleType")
                         .WithMany("Vehicles")
                         .HasForeignKey("VehicleTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -409,15 +409,15 @@ namespace Parking.DataAccess.Migrations
                     b.Navigation("VehicleType");
                 });
 
-            modelBuilder.Entity("Parking.DataAccess.Entities.ZoneMoveEntity", b =>
+            modelBuilder.Entity("Parking.DataAccess.Entities.ZoneMove", b =>
                 {
-                    b.HasOne("Parking.DataAccess.Entities.SessionEntity", "Session")
+                    b.HasOne("Parking.DataAccess.Entities.Session", "Session")
                         .WithMany("ZoneMoves")
                         .HasForeignKey("SessionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Parking.DataAccess.Entities.ZoneTariffEntity", "ZoneTariff")
+                    b.HasOne("Parking.DataAccess.Entities.ZoneTariff", "ZoneTariff")
                         .WithMany("ZoneMoves")
                         .HasForeignKey("ZoneTariffId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -428,9 +428,9 @@ namespace Parking.DataAccess.Migrations
                     b.Navigation("ZoneTariff");
                 });
 
-            modelBuilder.Entity("Parking.DataAccess.Entities.ZoneTariffEntity", b =>
+            modelBuilder.Entity("Parking.DataAccess.Entities.ZoneTariff", b =>
                 {
-                    b.HasOne("Parking.DataAccess.Entities.VehicleTypeEntity", "VehicleType")
+                    b.HasOne("Parking.DataAccess.Entities.VehicleType", "VehicleType")
                         .WithMany("ZoneTariffs")
                         .HasForeignKey("VehicleTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -439,18 +439,18 @@ namespace Parking.DataAccess.Migrations
                     b.Navigation("VehicleType");
                 });
 
-            modelBuilder.Entity("Parking.DataAccess.Entities.RegistrationPlateEntity", b =>
+            modelBuilder.Entity("Parking.DataAccess.Entities.RegistrationPlate", b =>
                 {
                     b.Navigation("Vehicle")
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Parking.DataAccess.Entities.SessionEntity", b =>
+            modelBuilder.Entity("Parking.DataAccess.Entities.Session", b =>
                 {
                     b.Navigation("ZoneMoves");
                 });
 
-            modelBuilder.Entity("Parking.DataAccess.Entities.UserEntity", b =>
+            modelBuilder.Entity("Parking.DataAccess.Entities.User", b =>
                 {
                     b.Navigation("Sessions");
                 });
@@ -460,14 +460,14 @@ namespace Parking.DataAccess.Migrations
                     b.Navigation("Sessions");
                 });
 
-            modelBuilder.Entity("Parking.DataAccess.Entities.VehicleTypeEntity", b =>
+            modelBuilder.Entity("Parking.DataAccess.Entities.VehicleType", b =>
                 {
                     b.Navigation("Vehicles");
 
                     b.Navigation("ZoneTariffs");
                 });
 
-            modelBuilder.Entity("Parking.DataAccess.Entities.ZoneTariffEntity", b =>
+            modelBuilder.Entity("Parking.DataAccess.Entities.ZoneTariff", b =>
                 {
                     b.Navigation("ZoneMoves");
                 });

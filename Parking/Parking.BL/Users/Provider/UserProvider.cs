@@ -6,7 +6,7 @@ using Parking.DataAccess.Entities;
 
 namespace Parking.BL.Users.Provider;
 
-public class UserProvider(IRepository<UserEntity> userRepository, IMapper mapper) : IUserProvider
+public class UserProvider(IRepository<User> userRepository, IMapper mapper) : IUserProvider
 {
     public IEnumerable<UserModel> GetUsers(ReadUserModel? filter = null)
     {
