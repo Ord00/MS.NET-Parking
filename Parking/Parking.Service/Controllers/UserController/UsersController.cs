@@ -23,7 +23,7 @@ public class UsersController(
         var validationResult = new CreateUserRequestValidator().Validate(request);
         if (validationResult.IsValid)
         {
-            var createUserModel = mapper.Map<RegisterUserModel>(request);
+            var createUserModel = mapper.Map<CreateUserModel>(request);
             var userModel = userManager.CreateUser(createUserModel);
             return Ok(new UserListResponse
             {

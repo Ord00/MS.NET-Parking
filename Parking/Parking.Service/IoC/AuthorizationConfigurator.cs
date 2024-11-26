@@ -4,15 +4,14 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Parking.DataAccess;
 using Parking.DataAccess.Entities;
+using Parking.Settings;
 
 namespace Parking.IoC;
 
 public class AuthorizationConfigurator
 {
-    public static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
+    public static void ConfigureServices(IServiceCollection services, ParkingSettings settings)
     {
-        var identityUri = configuration.GetValue<string>("IdentityServer:Uri");
-        
         services.AddIdentity<User, UserRole>(options =>
             {
                 options.SignIn.RequireConfirmedAccount = false;
@@ -62,7 +61,7 @@ public class AuthorizationConfigurator
         }).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
         {
             options.RequireHttpsMetadata = false;
-            options.Authority = identityUri;
+            options.Authority = settings.IdentityServerUri;
             options.TokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = false,

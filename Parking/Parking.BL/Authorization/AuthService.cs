@@ -9,17 +9,15 @@ namespace Parking.BL.Authorization;
 
 public class AuthService : IAuthService
 {
-    // private IRepository<User> _usersRepository;
     private UserManager<User> _userManager;
     private SignInManager<User> _signInManager;
     private IMapper _mapper;
     private string? _identityUri;
     
     public AuthService(
-        IRepository<User> usersRepository, UserManager<User> userManager, SignInManager<User> signInManager,
+        UserManager<User> userManager, SignInManager<User> signInManager,
         IMapper mapper, IConfiguration configuration)
     {
-        // _usersRepository = usersRepository;
         _userManager = userManager;
         _signInManager = signInManager;
         _mapper = mapper;
@@ -38,9 +36,6 @@ public class AuthService : IAuthService
         {
             Email = model.Email,
             UserName = model.Email,
-            FirstName = model.FirstName,
-            LastName = model.LastName,
-            Patronymic = model.Patronymic ?? string.Empty,
             EmailConfirmed = true
         };
 

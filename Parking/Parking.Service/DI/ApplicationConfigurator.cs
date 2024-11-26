@@ -7,6 +7,7 @@ public static class ApplicationConfigurator
 {
     public static void ConfigureServices(WebApplicationBuilder builder, ParkingSettings settings)
     {
+        AuthorizationConfigurator.ConfigureServices(builder.Services, settings);
         DbContextConfigurator.ConfigureService(builder.Services, settings);
         SerilogConfigurator.ConfigureService(builder);
         SwaggerConfigurator.ConfigureServices(builder.Services);
@@ -18,6 +19,7 @@ public static class ApplicationConfigurator
 
     public static void ConfigureApplication(WebApplication app)
     {
+        AuthorizationConfigurator.ConfigureApplication(app);
         SerilogConfigurator.ConfigureApplication(app);
         SwaggerConfigurator.ConfigureApplication(app);
         DbContextConfigurator.ConfigureApplication(app);

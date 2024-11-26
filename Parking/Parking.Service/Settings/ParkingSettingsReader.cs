@@ -6,7 +6,8 @@ public class ParkingSettingsReader
     {
         return new ParkingSettings()
         {
-            ParkingDbContextConnectionString = configuration.GetValue<string>("ParkingDbContext")
+            ParkingDbContextConnectionString = configuration.GetValue<string>("ParkingDbContext"),
+            IdentityServerUri = configuration.GetValue<string>("IdentityServer:Uri"),
         };
     }
 }
