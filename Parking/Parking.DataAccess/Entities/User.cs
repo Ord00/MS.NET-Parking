@@ -16,7 +16,7 @@ public class User : IdentityUser<int>, IBaseEntity
     public string? Patronymic { get; set; }
     public string Login { get; set; }
     public string PasswordHash { get; set; }
-    public string UserRole { get; set; }
+    public UserRole UserRole { get; set; }
     
     public virtual ICollection<CreditCard> CreditCards { get; set; }
     public virtual ICollection<Session> Sessions { get; set; }
@@ -24,4 +24,5 @@ public class User : IdentityUser<int>, IBaseEntity
 
 public class UserRole : IdentityRole<int>
 {
+    public string Name { get; set; }
 }

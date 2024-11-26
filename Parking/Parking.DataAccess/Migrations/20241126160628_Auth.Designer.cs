@@ -12,8 +12,8 @@ using Parking.DataAccess;
 namespace Parking.DataAccess.Migrations
 {
     [DbContext(typeof(ParkingDbContext))]
-    [Migration("20241126152132_A")]
-    partial class A
+    [Migration("20241126160628_Auth")]
+    partial class Auth
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -361,9 +361,8 @@ namespace Parking.DataAccess.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
 
-                    b.Property<string>("UserRole")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("UserRoleId")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -376,6 +375,8 @@ namespace Parking.DataAccess.Migrations
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
+
+                    b.HasIndex("UserRoleId");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -393,6 +394,7 @@ namespace Parking.DataAccess.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
 
@@ -647,6 +649,17 @@ namespace Parking.DataAccess.Migrations
                     b.Navigation("User");
 
                     b.Navigation("Vehicle");
+                });
+
+            modelBuilder.Entity("Parking.DataAccess.Entities.User", b =>
+                {
+                    b.HasOne("Parking.DataAccess.Entities.UserRole", "UserRole")
+                        .WithMany()
+                        .HasForeignKey("UserRoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("UserRole");
                 });
 
             modelBuilder.Entity("Parking.DataAccess.Entities.VehicleEntity", b =>

@@ -23,7 +23,7 @@ public class UserProvider(IRepository<User> userRepository, IMapper mapper) : IU
             (lastName == null || x.LastName.Contains(lastName)) &&
             (birthday == null || x.Birthday == birthday) &&
             (patronymic == null || x.Patronymic.Contains(patronymic)) &&
-            (userRole == null || x.UserRole.Contains(userRole))
+            (userRole == null || x.UserRole.Name.Contains(userRole.Name))
         );
         
         return mapper.Map<IEnumerable<UserModel>>(users);
