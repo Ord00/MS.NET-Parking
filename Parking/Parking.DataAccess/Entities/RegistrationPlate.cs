@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Parking.DataAccess.Entities;
 
 [Table("RegistrationPlates")]
-public class RegistrationPlateEntity : BaseEntity
+public class RegistrationPlate : BaseEntity
 {
     public int RegistrationNumber { get; set; }
     public string Letters { get; set; }

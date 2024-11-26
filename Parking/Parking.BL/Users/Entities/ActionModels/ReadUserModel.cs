@@ -1,3 +1,5 @@
+using Parking.DataAccess.Entities;
+
 namespace Parking.BL.Users.Entities.ActionModels;
 
 public class ReadUserModel
@@ -7,5 +9,5 @@ public class ReadUserModel
     public DateTime? Birthday { get; set; }
     public string? Patronymic { get; set; }
     public string? Login { get; set; }
-    public string? UserRole { get; set; }
+    public UserRole? UserRole { get; set; }
 }

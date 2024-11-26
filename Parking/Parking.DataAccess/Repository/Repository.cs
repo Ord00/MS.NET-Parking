@@ -4,7 +4,7 @@ using Parking.DataAccess.Entities;
 
 namespace Parking.DataAccess;
 
-public class Repository<T> : IRepository<T> where T : BaseEntity
+public class Repository<T> : IRepository<T> where T : class, IBaseEntity
 {
     public Repository(IDbContextFactory<ParkingDbContext> contextFactory)
     {

@@ -10,10 +10,10 @@ public class VehicleEntity : BaseEntity
     public string Colour { get; set; }
     
     public int VehicleTypeId { get; set; }
-    public VehicleTypeEntity VehicleType { get; set; }
+    public VehicleType VehicleType { get; set; }
     
     public int RegistrationPlateId { get; set; }
-    public RegistrationPlateEntity RegistrationPlate { get; set; }
+    public RegistrationPlate RegistrationPlate { get; set; }
     
-    public virtual ICollection<SessionEntity> Sessions { get; set; }
+    public virtual ICollection<Session> Sessions { get; set; }
 }

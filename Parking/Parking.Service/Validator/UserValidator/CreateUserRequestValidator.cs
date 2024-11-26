@@ -32,7 +32,7 @@ public class CreateUserRequestValidator : AbstractValidator<CreateUserRequest>
         RuleFor(x => x.Login)
             .NotEmpty()
             .EmailAddress()
-            .WithMessage("Login is required");
+            .WithMessage("Email is required");
         
         RuleFor(x => x.Password)
             .NotEmpty()

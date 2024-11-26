@@ -6,7 +6,7 @@ using Parking.DataAccess.Entities;
 
 namespace Parking.BL.Sessions.Provider;
 
-public class SessionProvider(IRepository<SessionEntity> sessionsRepository, IMapper mapper) : ISessionProvider
+public class SessionProvider(IRepository<Session> sessionsRepository, IMapper mapper) : ISessionProvider
 {
     public IEnumerable<SessionModel> GetSessions(ReadSessionModel? filter = null)
     {

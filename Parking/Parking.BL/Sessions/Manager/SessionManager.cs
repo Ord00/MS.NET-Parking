@@ -6,11 +6,11 @@ using Parking.DataAccess.Entities;
 
 namespace Parking.BL.Sessions.Manager;
 
-public class SessionManager(IRepository<SessionEntity> sessionsRepository, IMapper mapper) : ISessionManager
+public class SessionManager(IRepository<Session> sessionsRepository, IMapper mapper) : ISessionManager
 {
     public SessionModel CreateSession(CreateSessionModel model)
     {
-        var entity = mapper.Map<SessionEntity>(model);
+        var entity = mapper.Map<Session>(model);
         entity = sessionsRepository.Save(entity);
         return mapper.Map<SessionModel>(entity);
     }

@@ -12,20 +12,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-DbContextConfigurator.ConfigureService(builder.Services, settings);
-SerilogConfigurator.ConfigureService(builder);
-SwaggerConfigurator.ConfigureServices(builder.Services);
 ApplicationConfigurator.ConfigureServices(builder, settings);
 
 var app = builder.Build();
 
-SerilogConfigurator.ConfigureApplication(app);
-SwaggerConfigurator.ConfigureApplication(app);
-DbContextConfigurator.ConfigureApplication(app);
 ApplicationConfigurator.ConfigureApplication(app);
 
 app.UseHttpsRedirection();
-app.UseAuthorization();
+AuthorizationConfigurator.ConfigureApplication(app);
 app.MapControllers();
 
 app.Run();

@@ -1,6 +1,6 @@
 namespace Parking.DataAccess.Entities;
 
-public class BaseEntity
+public class BaseEntity : IBaseEntity
 {
     public int Id { get; set; } //ключ в бд
 

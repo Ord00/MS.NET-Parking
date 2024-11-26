@@ -18,13 +18,13 @@ public class ServicesConfigurator
     {
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         
-        services.AddScoped<IRepository<UserEntity>>(x => 
-            new Repository<UserEntity>(x.GetRequiredService<IDbContextFactory<ParkingDbContext>>()));
+        services.AddScoped<IRepository<User>>(x => 
+            new Repository<User>(x.GetRequiredService<IDbContextFactory<ParkingDbContext>>()));
         services.AddScoped<IUserProvider>(x => 
-            new UserProvider(x.GetRequiredService<IRepository<UserEntity>>(), 
+            new UserProvider(x.GetRequiredService<IRepository<User>>(), 
                 x.GetRequiredService<IMapper>()));
         services.AddScoped<IUserManager>(x =>
-            new UserManager(x.GetRequiredService<IRepository<UserEntity>>(),
+            new UserManager(x.GetRequiredService<IRepository<User>>(),
                 x.GetRequiredService<IMapper>()));
         
         services.AddScoped<IRepository<VehicleEntity>>(x => 
@@ -36,13 +36,13 @@ public class ServicesConfigurator
             new VehicleManager(x.GetRequiredService<IRepository<VehicleEntity>>(),
                 x.GetRequiredService<IMapper>()));
         
-        services.AddScoped<IRepository<SessionEntity>>(x => 
-            new Repository<SessionEntity>(x.GetRequiredService<IDbContextFactory<ParkingDbContext>>()));
+        services.AddScoped<IRepository<Session>>(x => 
+            new Repository<Session>(x.GetRequiredService<IDbContextFactory<ParkingDbContext>>()));
         services.AddScoped<ISessionProvider>(x => 
-            new SessionProvider(x.GetRequiredService<IRepository<SessionEntity>>(), 
+            new SessionProvider(x.GetRequiredService<IRepository<Session>>(), 
                 x.GetRequiredService<IMapper>()));
         services.AddScoped<ISessionManager>(x =>
-            new SessionManager(x.GetRequiredService<IRepository<SessionEntity>>(),
+            new SessionManager(x.GetRequiredService<IRepository<Session>>(),
                 x.GetRequiredService<IMapper>()));
     }
 }

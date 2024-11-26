@@ -3,7 +3,7 @@ using Parking.DataAccess.Entities;
 
 namespace Parking.DataAccess;
 
-public interface IRepository<T> where T: BaseEntity
+public interface IRepository<T> where T: IBaseEntity
 {
     IQueryable<T> GetAll();
     IQueryable<T> GetAll(Expression<Func<T, bool>> predicate);
