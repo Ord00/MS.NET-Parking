@@ -5,7 +5,7 @@ using Parking.DataAccess.Entities;
 
 namespace Parking.DataAccess;
 
-public class ParkingDbContext : IdentityDbContext<User, UserRole, Guid>
+public class ParkingDbContext : IdentityDbContext<User, UserRole, int>
 {
     public DbSet<CreditCard> CreditCards { get; set; }
     public DbSet<RegistrationPlate> RegistrationPlates { get; set; }
